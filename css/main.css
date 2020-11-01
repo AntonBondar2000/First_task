@@ -95,7 +95,7 @@ section.main .main_area .choice_mode i {
   height: auto;
   width: 30%;
   margin-top: 50px;
-  min-width: 300px;
+  min-width: 250px;
   background-color: #fff;
 }
 
@@ -163,5 +163,24 @@ section.main .main_area .choice_mode i {
   color: #fff;
   -webkit-transition-duration: .5s;
           transition-duration: .5s;
+}
+
+.main_pagination .pagination .current_page {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .current_page {
+    display: block !important;
+  }
+  .number_page {
+    display: none;
+  }
+  .pagination {
+    width: 70% !important;
+  }
+  .pagination a {
+    padding: 5px 10px 5px 10px !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

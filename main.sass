@@ -60,7 +60,7 @@ section.main
         height: auto
         width: 30%
         margin-top: 50px
-        min-width: 300px
+        min-width: 250px
         background-color: #fff
 
         .image_block
@@ -99,4 +99,16 @@ section.main
                 background-color: #1E90FF
                 color: #fff
                 transition-duration: .5s
+        .current_page
+            display: none
+
+@media screen and (max-width: 850px)
+    .current_page
+        display: block !important
+    .number_page
+        display: none
+    .pagination
+        width: 70% !important
+        a
+            padding: 5px 10px 5px 10px !important
 
