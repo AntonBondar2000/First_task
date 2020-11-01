@@ -1,12 +1,13 @@
 new Vue({
 
-    el: "#test",
+    el: "#main_area",
     data: {
+        home_resourse_url: "https://nikomax.ru/",
         resourse_url: "https://nikomax.ru/get_products/section/cooper_cable.json",
-        getdata: {}
+        getdata: {},
+        isGrid: true
     },
     mounted() {
-        var test
         fetch(this.resourse_url, {
             method: 'get',
             headers: {
@@ -16,5 +17,11 @@ new Vue({
         }).then(res => res.json())
             .then(res => this.getdata = res);
 
+    },
+    methods:{
+        imageurl(url){
+            return this.home_resourse_url+url;
+        }
     }
+    
 });
