@@ -7,7 +7,7 @@ new Vue({
         getdata: [], // json
         isGrid: true, // для условия(сетка или список)
         card_per_page: 9, // Элементов на страници
-        current_page_number: 3 // Текущая страница
+        current_page_number: 1 // Текущая страница
     },
     mounted() {
         fetch(this.resourse_url, { // Получение json
