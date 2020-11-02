@@ -19,6 +19,11 @@ a {
   color: #1E90FF;
 }
 
+.active_paginatin {
+  background-color: #1E90FF !important;
+  color: #fff !important;
+}
+
 header {
   width: 100%;
   height: 150px;
@@ -151,7 +156,7 @@ section.main .main_area .choice_mode i {
           justify-content: space-between;
 }
 
-.main_pagination .pagination a {
+.main_pagination .pagination span {
   padding: 10px 15px 10px 15px;
   background-color: white;
   color: #000000;
@@ -160,9 +165,10 @@ section.main .main_area .choice_mode i {
   border: 2px solid #1E90FF;
   -webkit-transition-duration: .5s;
           transition-duration: .5s;
+  cursor: pointer;
 }
 
-.main_pagination .pagination a:hover {
+.main_pagination .pagination span:hover {
   background-color: #1E90FF;
   color: #fff;
   -webkit-transition-duration: .5s;
@@ -239,7 +245,7 @@ section.main .main_area .choice_mode i {
   margin-right: 50px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
   .current_page {
     display: block !important;
   }

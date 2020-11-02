@@ -13,6 +13,9 @@ a
 .active
     color: #1E90FF
 
+.active_paginatin
+    background-color: #1E90FF !important
+    color: #fff !important
 header
     width: 100%
     height: 150px
@@ -89,7 +92,7 @@ section.main
         display: flex
         align-items: center
         justify-content: space-between
-        a
+        span
             padding: 10px 15px 10px 15px
             background-color: white
             color: #000000
@@ -97,6 +100,7 @@ section.main
             font-weight: 500
             border: 2px solid #1E90FF
             transition-duration: .5s
+            cursor: pointer
             &:hover
                 background-color: #1E90FF
                 color: #fff
@@ -134,7 +138,7 @@ section.main
             background: #fff   
             margin-right: 50px
 
-@media screen and (max-width: 850px)
+@media screen and (max-width: 1000px)
     .current_page
         display: block !important
     .number_page

@@ -29,7 +29,7 @@
                 </div>
 
                <div class="grid_view" id = "view_grid" v-if = "isGrid">
-                    <div class="grid_view_block" v-for = "item in getdata">
+                    <div class="grid_view_block" v-for = "item in paginatedData">
                         <div class="image_block"><a v-bind:href = "home_resourse_url+item['url']"><img v-bind:src="imageurl(item['image_url'])" v-bind:alt = "item['title']"></a></div>
                         <p class="art">{{item['art']}}</p>
                         <p class="annotation">{{item['annotation']}}</p>
@@ -38,7 +38,7 @@
 
 
                 <div class="list_view" v-else>
-                    <div class="list_view_block" v-for = "item in getdata">
+                    <div class="list_view_block" v-for = "item in paginatedData">
                         <div class="image_block"><a v-bind:href = "home_resourse_url+item['url']"><img v-bind:src="imageurl(item['image_url'])" v-bind:alt = "item['title']"></a></div>
                         <div class="art_block"><p class="art">{{item['art']}}</p></div>
                         <div class="annotation_block"><p class="annotation">{{item['annotation']}}</p></div>   
@@ -49,16 +49,12 @@
 
             <div class="main_pagination">
                 <div class="pagination">
-                    <a class="first_page" href="#"><<</a>
-                    <a class="prev_page" href="#"><</a>
-                    <a class="number_page" href="#">1</a>
-                    <a class="number_page" href="#">2</a>
-                    <a class="number_page" href="#">3</a>
-                    <a class="current_page" href="#">12</a>
-                    <a class="number_page" href="#">4</a>
-                    <a class="number_page" href="#">5</a>
-                    <a class="next_page" href="#">></a>
-                    <a class="last_page" href="#">>></a> 
+                    <span class="first_page" v-on:click = "TransferFirstPage()"><<</span>
+                    <span class="prev_page" v-on:click = "TransferPrevPage()" v-bind:style = "{display: current_page_number === 1 ? 'none' : 'block'}"><</span>
+                    <span class="number_page" v-for = "page in pages" v-bind:class = "{'active_paginatin': page === current_page_number}" v-on:click = "TransferCurrentPage(page)">{{page}}</span>
+                    <span class="current_page" >{{current_page_number}}</span>
+                    <span class="next_page" v-on:click = "TransferNextPage()" v-bind:style = "{display: current_page_number === pages ? 'none' : 'block'}">></span>
+                    <span class="last_page " v-on:click = "TransferLastPage()">>></span> 
                 </div>
             </div>
         </div>
